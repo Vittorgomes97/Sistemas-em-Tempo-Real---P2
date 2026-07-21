@@ -304,22 +304,6 @@ Essa estrutura permite a execução concorrente dos três maqueiros e dos três 
 6. Utilize os botões conforme o modo selecionado.
 7. Observe os LEDs, o monitor serial e o analisador lógico.
 
-## Relatório técnico
-
-O relatório apresenta:
-
-- objetivo do projeto;
-- especificações do sistema;
-- arquitetura FreeRTOS;
-- tarefas implementadas;
-- componentes utilizados;
-- modos de operação;
-- sincronização do cheat;
-- código comentado;
-- diagrama do Wokwi.
-
-[Baixar relatório técnico](docs/relatorio.pdf)
-
 ## Vídeo de demonstração
 
 O vídeo de demonstração apresenta:
@@ -334,31 +318,6 @@ O vídeo de demonstração apresenta:
 - controle dos leitos.
 
 [Assistir à demonstração no YouTube](COLOQUE-AQUI-O-LINK-DO-VIDEO)
-
-## Estrutura do repositório
-
-```text
-hospital-freertos/
-├── README.md
-├── sketch.ino
-├── diagram.json
-└── docs/
-    └── relatorio.pdf
-```
-
-## Entregáveis
-
-- [x] Código estruturado com tarefas FreeRTOS
-- [x] Código comentado
-- [x] Arquitetura das tarefas
-- [x] Diagrama de blocos
-- [x] Explicação do modo automático
-- [x] Explicação do modo manual
-- [x] Explicação do modo teste
-- [x] Explicação da sincronização do cheat
-- [x] Montagem no Wokwi
-- [x] Relatório técnico
-- [ ] Link do vídeo de demonstração
 
 ## Limitação
 
