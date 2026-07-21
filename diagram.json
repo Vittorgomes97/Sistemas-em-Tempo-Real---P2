@@ -1,0 +1,287 @@
+{
+  "version": 1,
+  "author": "Projeto Hospital FreeRTOS",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "wokwi-text",
+      "id": "titulo",
+      "top": 15,
+      "left": 315,
+      "attrs": { "text": "HOSPITAL OTIMIZADO - ESP32 + FreeRTOS" }
+    },
+    {
+      "type": "wokwi-text",
+      "id": "subtitulo",
+      "top": 45,
+      "left": 350,
+      "attrs": { "text": "3 CONSULTORIOS | 3 MAQUEIROS | 4 LEITOS" }
+    },
+    {
+      "type": "wokwi-text",
+      "id": "txtModo",
+      "top": 95,
+      "left": 40,
+      "attrs": { "text": "SELECAO DE MODO" }
+    },
+    {
+      "type": "wokwi-text",
+      "id": "txtEntradas",
+      "top": 300,
+      "left": 50,
+      "attrs": { "text": "ENTRADAS MANUAIS" }
+    },
+    {
+      "type": "wokwi-text",
+      "id": "txtSaidas",
+      "top": 85,
+      "left": 825,
+      "attrs": { "text": "SAIDAS / ESTADOS" }
+    },
+    {
+      "type": "wokwi-text",
+      "id": "txtLogic",
+      "top": 720,
+      "left": 410,
+      "attrs": { "text": "SINAIS DE SINCRONIZACAO" }
+    },
+
+    {
+      "type": "wokwi-esp32-devkit-v1",
+      "id": "esp",
+      "top": 175,
+      "left": 390,
+      "attrs": {}
+    },
+
+    {
+      "type": "wokwi-slide-switch",
+      "id": "swModo1",
+      "top": 130,
+      "left": 55,
+      "attrs": { "value": "", "bounce": "0" }
+    },
+    {
+      "type": "wokwi-text",
+      "id": "lblModo1",
+      "top": 135,
+      "left": 120,
+      "attrs": { "text": "MODO 1" }
+    },
+    {
+      "type": "wokwi-slide-switch",
+      "id": "swModo0",
+      "top": 215,
+      "left": 55,
+      "attrs": { "value": "", "bounce": "0" }
+    },
+    {
+      "type": "wokwi-text",
+      "id": "lblModo0",
+      "top": 220,
+      "left": 120,
+      "attrs": { "text": "MODO 0" }
+    },
+
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btnCheat",
+      "top": 345,
+      "left": 55,
+      "attrs": { "color": "red", "label": "CHEAT", "bounce": "1" }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btnAlta",
+      "top": 445,
+      "left": 55,
+      "attrs": { "color": "blue", "label": "ALTA", "bounce": "1" }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btnPaciente",
+      "top": 545,
+      "left": 55,
+      "attrs": { "color": "green", "label": "PACIENTE", "bounce": "1" }
+    },
+
+    {
+      "type": "wokwi-led",
+      "id": "ledRec",
+      "top": 110,
+      "left": 860,
+      "attrs": { "color": "red", "label": "REC CHEIA" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "rRec",
+      "top": 163,
+      "left": 855,
+      "rotate": 90,
+      "attrs": { "value": "220" }
+    },
+
+    {
+      "type": "wokwi-led",
+      "id": "ledC3",
+      "top": 195,
+      "left": 860,
+      "attrs": { "color": "orange", "label": "C3" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "rC3",
+      "top": 248,
+      "left": 855,
+      "rotate": 90,
+      "attrs": { "value": "220" }
+    },
+
+    {
+      "type": "wokwi-led",
+      "id": "ledC2",
+      "top": 280,
+      "left": 860,
+      "attrs": { "color": "orange", "label": "C2" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "rC2",
+      "top": 333,
+      "left": 855,
+      "rotate": 90,
+      "attrs": { "value": "220" }
+    },
+
+    {
+      "type": "wokwi-led",
+      "id": "ledC1",
+      "top": 365,
+      "left": 860,
+      "attrs": { "color": "orange", "label": "C1" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "rC1",
+      "top": 418,
+      "left": 855,
+      "rotate": 90,
+      "attrs": { "value": "220" }
+    },
+
+    {
+      "type": "wokwi-led",
+      "id": "ledTeste",
+      "top": 450,
+      "left": 860,
+      "attrs": { "color": "yellow", "label": "TESTE" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "rTeste",
+      "top": 503,
+      "left": 855,
+      "rotate": 90,
+      "attrs": { "value": "220" }
+    },
+
+    {
+      "type": "wokwi-led",
+      "id": "ledManual",
+      "top": 535,
+      "left": 860,
+      "attrs": { "color": "blue", "label": "MANUAL" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "rManual",
+      "top": 588,
+      "left": 855,
+      "rotate": 90,
+      "attrs": { "value": "220" }
+    },
+
+    {
+      "type": "wokwi-led",
+      "id": "ledAuto",
+      "top": 620,
+      "left": 860,
+      "attrs": { "color": "green", "label": "AUTO" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "rAuto",
+      "top": 673,
+      "left": 855,
+      "rotate": 90,
+      "attrs": { "value": "220" }
+    },
+
+    {
+      "type": "wokwi-logic-analyzer",
+      "id": "logic1",
+      "top": 760,
+      "left": 420,
+      "attrs": {
+        "channelNames": "AMOSTRA,CHEAT_EXEC,PEDIDO_CHEAT,REC_CHEIA",
+        "bufferSize": "100000"
+      }
+    }
+  ],
+  "connections": [
+    [ "esp:TX0", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX0", "$serialMonitor:TX", "", [] ],
+
+    [ "swModo1:1", "esp:GND.2", "black", [ "h45", "v420", "*", "h-35" ] ],
+    [ "swModo1:2", "esp:D33", "green", [ "h105", "v125", "*", "h-35" ] ],
+    [ "swModo1:3", "esp:3V3", "red", [ "h75", "v-50", "h205", "*", "h-25" ] ],
+
+    [ "swModo0:1", "esp:GND.2", "black", [ "h60", "v335", "*", "h-35" ] ],
+    [ "swModo0:2", "esp:D32", "green", [ "h120", "v50", "*", "h-35" ] ],
+    [ "swModo0:3", "esp:3V3", "red", [ "h90", "v-135", "h190", "*", "h-25" ] ],
+
+    [ "btnCheat:1.l", "esp:D27", "green", [ "h125", "*", "h-35" ] ],
+    [ "btnCheat:2.l", "esp:GND.2", "black", [ "h55", "v215", "*", "h-35" ] ],
+
+    [ "btnAlta:1.l", "esp:D14", "blue", [ "h125", "*", "h-35" ] ],
+    [ "btnAlta:2.l", "esp:GND.2", "black", [ "h70", "v115", "*", "h-35" ] ],
+
+    [ "btnPaciente:1.l", "esp:D13", "green", [ "h125", "*", "h-35" ] ],
+    [ "btnPaciente:2.l", "esp:GND.2", "black", [ "h85", "v15", "*", "h-35" ] ],
+
+    [ "esp:D21", "rRec:1", "red", [ "h70", "v-115", "h265", "*", "h-35" ] ],
+    [ "rRec:2", "ledRec:A", "red", [] ],
+    [ "ledRec:C", "esp:GND.1", "black", [ "h80", "v615", "h-480", "*", "h35" ] ],
+
+    [ "esp:D22", "rC3:1", "purple", [ "h85", "v-45", "h250", "*", "h-35" ] ],
+    [ "rC3:2", "ledC3:A", "purple", [] ],
+    [ "ledC3:C", "esp:GND.1", "black", [ "h95", "v530", "h-495", "*", "h35" ] ],
+
+    [ "esp:D19", "rC2:1", "orange", [ "h100", "v25", "h235", "*", "h-35" ] ],
+    [ "rC2:2", "ledC2:A", "orange", [] ],
+    [ "ledC2:C", "esp:GND.1", "black", [ "h110", "v445", "h-510", "*", "h35" ] ],
+
+    [ "esp:D18", "rC1:1", "orange", [ "h115", "v95", "h220", "*", "h-35" ] ],
+    [ "rC1:2", "ledC1:A", "orange", [] ],
+    [ "ledC1:C", "esp:GND.1", "black", [ "h125", "v360", "h-525", "*", "h35" ] ],
+
+    [ "esp:D5", "rTeste:1", "yellow", [ "h130", "v135", "h205", "*", "h-35" ] ],
+    [ "rTeste:2", "ledTeste:A", "yellow", [] ],
+    [ "ledTeste:C", "esp:GND.1", "black", [ "h140", "v275", "h-540", "*", "h35" ] ],
+
+    [ "esp:D4", "rManual:1", "blue", [ "h145", "v175", "h190", "*", "h-35" ] ],
+    [ "rManual:2", "ledManual:A", "blue", [] ],
+    [ "ledManual:C", "esp:GND.1", "black", [ "h155", "v190", "h-555", "*", "h35" ] ],
+
+    [ "esp:D2", "rAuto:1", "green", [ "h160", "v215", "h175", "*", "h-35" ] ],
+    [ "rAuto:2", "ledAuto:A", "green", [] ],
+    [ "ledAuto:C", "esp:GND.1", "black", [ "h170", "v105", "h-570", "*", "h35" ] ],
+
+    [ "esp:D25", "logic1:D0", "green", [ "h-55", "v470", "h180", "*", "h-25" ] ],
+    [ "esp:D26", "logic1:D1", "red", [ "h-70", "v490", "h205", "*", "h-25" ] ],
+    [ "esp:D23", "logic1:D2", "blue", [ "h55", "v530", "h-130", "*", "h-25" ] ],
+    [ "esp:D21", "logic1:D3", "orange", [ "h70", "v510", "h-155", "*", "h-25" ] ],
+    [ "logic1:GND", "esp:GND.1", "black", [ "h-35", "v-60", "*", "h35" ] ]
+  ],
+  "dependencies": {}
+}
