@@ -119,6 +119,10 @@ hospital-freertos/
     └── relatorio.pdf
 ```
 
+## Vídeo de Demonstração
+
+
+
 ## Limitação
 
 O Wokwi valida a lógica do sistema e a comunicação entre tarefas, mas não substitui totalmente testes em um ESP32 físico.
