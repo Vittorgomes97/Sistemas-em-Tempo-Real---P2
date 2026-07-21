@@ -145,27 +145,53 @@ Para impedir espera indefinida:
 
 ## Evidências dos três modos
 
-As capturas abaixo devem mostrar o LED correspondente ao modo e as mensagens do monitor serial.
+## Modo manual
 
-### Modo automático
+O modo manual permite controlar diretamente a entrada e a saída de pacientes durante a simulação.
 
-<!-- Substitua o arquivo abaixo pela captura real do modo automático. -->
-![Modo automático](docs/capturas/modo-automatico.png)
+Nesse modo, os eventos automáticos de chegada e alta ficam desativados. O usuário controla o sistema pelos botões da montagem:
 
-### Modo manual
+- `PACIENTE`: solicita a criação de um novo paciente na triagem;
+- `ALTA`: remove um paciente da recuperação e libera um leito;
+- `CHEAT`: não é executado no modo manual.
 
-<!-- Substitua o arquivo abaixo pela captura real do modo manual. -->
-![Modo manual](docs/capturas/modo-manual.png)
+Quando o botão `PACIENTE` é pressionado, a tarefa `tEntradas` envia uma solicitação para a tarefa `tTriagem`. Em seguida, o paciente recebe uma classificação de prioridade e é colocado em uma das filas de atendimento.
 
-### Modo teste
+Quando o botão `ALTA` é pressionado, a tarefa `tAlta` tenta retirar um paciente da recuperação. Caso exista um paciente internado, o leito correspondente é liberado no semáforo contador.
 
-<!-- Substitua o arquivo abaixo pela captura real do modo teste. -->
-![Modo teste](docs/capturas/modo-teste.png)
+O modo manual é utilizado para testar o fluxo do hospital de maneira controlada, permitindo observar separadamente:
 
-### Sincronização do cheat
+1. entrada do paciente;
+2. triagem;
+3. transporte pelo maqueiro;
+4. atendimento no consultório;
+5. transporte para a recuperação;
+6. liberação do leito pela alta.
 
-<!-- Adicione uma captura do analisador lógico mostrando pedido, amostragem e execução. -->
-![Sincronização do cheat](docs/capturas/sincronizacao-cheat.png)
+## Modo teste
+
+O modo teste mantém os controles manuais e adiciona a função `CHEAT`.
+
+Nesse modo, os botões possuem as seguintes funções:
+
+- `PACIENTE`: solicita um paciente comum;
+- `ALTA`: libera um paciente da recuperação;
+- `CHEAT`: solicita um paciente vermelho com prioridade máxima.
+
+O cheat não cria o paciente imediatamente. Quando o botão é pressionado, a tarefa `tEntradas` apenas registra uma solicitação pendente no `Event Group`, utilizando o bit `BIT_CHEAT`.
+
+A execução ocorre no próximo ciclo da tarefa periódica de amostragem:
+
+```text
+Botão CHEAT pressionado
+        ↓
+BIT_CHEAT ativado no Event Group
+        ↓
+Tarefa de amostragem aguarda o próximo período
+        ↓
+Tarefa tCheat recebe uma notificação
+        ↓
+Paciente vermelho prioritário é enviado à triagem
 
 ## Como executar
 
@@ -175,12 +201,6 @@ As capturas abaixo devem mostrar o LED correspondente ao modo e as mensagens do 
 4. Inicie a simulação.
 5. Selecione o modo pelos switches.
 6. Observe os LEDs, o monitor serial e o analisador lógico.
-
-## Relatório técnico
-
-O relatório apresenta a arquitetura, as tarefas FreeRTOS, os modos de operação, a sincronização do cheat, os componentes e os códigos comentados.
-
-[Baixar relatório técnico](docs/relatorio.pdf)
 
 ## Vídeo de demonstração
 
@@ -211,19 +231,6 @@ hospital-freertos/
         ├── modo-teste.png
         └── sincronizacao-cheat.png
 ```
-
-## Entregáveis
-
-- [x] Código estruturado com tarefas FreeRTOS
-- [x] Código comentado
-- [x] Arquitetura das tarefas
-- [x] Explicação da sincronização do cheat
-- [x] Montagem no Wokwi
-- [ ] Captura do modo automático
-- [ ] Captura do modo manual
-- [ ] Captura do modo teste
-- [ ] Captura do analisador lógico
-- [ ] Link do vídeo de demonstração
 
 ## Limitação
 
