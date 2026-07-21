@@ -180,58 +180,6 @@ Nesse modo, os botões possuem as seguintes funções:
 
 O cheat não cria o paciente imediatamente. Quando o botão é pressionado, a tarefa `tEntradas` apenas registra uma solicitação pendente no `Event Group`, utilizando o bit `BIT_CHEAT`.
 
-A execução ocorre no próximo ciclo da tarefa periódica de amostragem:
-
-```text
-Botão CHEAT pressionado
-        ↓
-BIT_CHEAT ativado no Event Group
-        ↓
-Tarefa de amostragem aguarda o próximo período
-        ↓
-Tarefa tCheat recebe uma notificação
-        ↓
-Paciente vermelho prioritário é enviado à triagem
-
-## Como executar
-
-1. Crie um projeto **ESP32** no Wokwi.
-2. Copie `sketch.ino` para o editor de código.
-3. Copie `diagram.json` para o editor do circuito.
-4. Inicie a simulação.
-5. Selecione o modo pelos switches.
-6. Observe os LEDs, o monitor serial e o analisador lógico.
-
-## Vídeo de demonstração
-
-O vídeo deve apresentar:
-
-- montagem no Wokwi;
-- modo automático;
-- modo manual;
-- modo teste;
-- sincronização do cheat;
-- funcionamento dos maqueiros e consultórios.
-
-[Assistir à demonstração no YouTube](COLOQUE-AQUI-O-LINK-DO-VIDEO)
-
-## Estrutura do repositório
-
-```text
-hospital-freertos/
-├── README.md
-├── sketch.ino
-├── diagram.json
-└── docs/
-    ├── relatorio.pdf
-    └── capturas/
-        ├── montagem-wokwi.png
-        ├── modo-automatico.png
-        ├── modo-manual.png
-        ├── modo-teste.png
-        └── sincronizacao-cheat.png
-```
-
 ## Limitação
 
 O Wokwi valida a lógica e a comunicação entre tarefas, mas não substitui completamente testes em um ESP32 físico.
