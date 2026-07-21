@@ -14,11 +14,12 @@ O sistema possui:
 - sinalização por LEDs;
 - sincronização do cheat com uma tarefa periódica.
 
+
 ## Simulador e montagem
 
 A simulação foi desenvolvida no **Wokwi**. O arquivo `diagram.json` define o ESP32, switches, botões, LEDs, resistores e analisador lógico.
 
-![Montagem completa no Wokwi](https://raw.githubusercontent.com/Vittorgomes97/Sistemas-em-Tempo-Real---P2/main/docs/capturas/montagem-wokwi.png)
+![Montagem completa no Wokwi](https://github.com/user-attachments/assets/COLE-AQUI-O-ID-GERADO)
 
 ## Implementação
 
