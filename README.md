@@ -119,20 +119,6 @@ hospital-freertos/
     └── relatorio.pdf
 ```
 
-## Relatório
-
-O relatório apresenta:
-
-- objetivo e funcionamento do projeto;
-- especificações do sistema;
-- arquitetura FreeRTOS;
-- componentes e GPIOs;
-- modos de operação;
-- comunicação entre tarefas;
-- sincronização do cheat;
-- códigos comentados;
-- limitações da simulação.
-
 ## Limitação
 
 O Wokwi valida a lógica do sistema e a comunicação entre tarefas, mas não substitui totalmente testes em um ESP32 físico.
