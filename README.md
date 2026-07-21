@@ -180,6 +180,16 @@ Nesse modo, os botões possuem as seguintes funções:
 
 O cheat não cria o paciente imediatamente. Quando o botão é pressionado, a tarefa `tEntradas` apenas registra uma solicitação pendente no `Event Group`, utilizando o bit `BIT_CHEAT`.
 
+## Como executar
+
+1. Crie um projeto **ESP32** no Wokwi.
+2. Copie o conteúdo de `sketch.ino` para o editor de código.
+3. Copie o conteúdo de `diagram.json` para o editor do circuito.
+4. Inicie a simulação.
+5. Selecione o modo pelos dois switches.
+6. Utilize os botões conforme o modo selecionado.
+7. Observe os LEDs, o monitor serial e o analisador lógico.
+
 ## Limitação
 
 O Wokwi valida a lógica e a comunicação entre tarefas, mas não substitui completamente testes em um ESP32 físico.
