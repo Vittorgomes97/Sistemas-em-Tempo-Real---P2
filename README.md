@@ -14,12 +14,11 @@ O sistema possui:
 - sinalização por LEDs;
 - sincronização do cheat com uma tarefa periódica.
 
-
 ## Simulador e montagem
 
 A simulação foi desenvolvida no **Wokwi**. O arquivo `diagram.json` define o ESP32, switches, botões, LEDs, resistores e analisador lógico.
 
-![Montagem completa no Wokwi](<img width="734" height="610" alt="Image" src="https://github.com/user-attachments/assets/d45be69e-ba9f-48e5-a601-8fbb92e64366" />)
+![Montagem completa do hospital automatizado no Wokwi](https://github.com/user-attachments/assets/d45be69e-ba9f-48e5-a601-8fbb92e64366)
 
 ## Implementação
 
