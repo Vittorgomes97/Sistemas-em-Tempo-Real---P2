@@ -18,7 +18,7 @@ O sistema possui:
 
 A simulação foi desenvolvida no **Wokwi**. O arquivo `diagram.json` define o ESP32, switches, botões, LEDs, resistores e analisador lógico.
 
-![Montagem completa no Wokwi]([docs/capturas/montagem-wokwi.png](https://github.com/Vittorgomes97/Sistemas-em-Tempo-Real---P2/issues/1#issue-4943486086))
+![Montagem completa no Wokwi](https://raw.githubusercontent.com/Vittorgomes97/Sistemas-em-Tempo-Real---P2/main/docs/capturas/montagem-wokwi.png)
 
 ## Implementação
 
