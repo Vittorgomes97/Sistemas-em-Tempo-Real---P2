@@ -845,7 +845,6 @@ void setup() {
   acordarDespachante();
 
   registrar("\nHOSPITAL FreeRTOS: 3 consultorios, 3 maqueiros, 4 leitos.\n");
-  registrar("Arquitetura sem mutex global. Monitoramento de pilha removido.\n");
 }
 
 void loop() {
