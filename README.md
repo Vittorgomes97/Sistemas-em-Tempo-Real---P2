@@ -306,18 +306,9 @@ Essa estrutura permite a execução concorrente dos três maqueiros e dos três 
 
 ## Vídeo de demonstração
 
-O vídeo de demonstração apresenta:
-
-- montagem no Wokwi;
-- modo automático;
-- modo manual;
-- modo teste;
-- sincronização do cheat;
-- funcionamento dos maqueiros;
-- funcionamento dos consultórios;
-- controle dos leitos.
-
 [Assistir à demonstração no YouTube](COLOQUE-AQUI-O-LINK-DO-VIDEO)
+
+[Projeto da ESP32 NO Wokwi](https://wokwi.com/projects/470835359655617537)
 
 ## Limitação
 
