@@ -306,7 +306,7 @@ Essa estrutura permite a execução concorrente dos três maqueiros e dos três 
 
 ## Vídeo de demonstração
 
-[Assistir à demonstração no YouTube](COLOQUE-AQUI-O-LINK-DO-VIDEO)
+[Assistir à demonstração no YouTube](https://youtu.be/Q9T1Hzi6JM0)
 
 [Projeto da ESP32 NO Wokwi](https://wokwi.com/projects/470835359655617537)
 
