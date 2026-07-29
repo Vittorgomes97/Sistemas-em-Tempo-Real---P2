@@ -18,7 +18,7 @@
   - 4 leitos de recuperacao;
   - triagem dividida em filas por prioridade;
   - despachante responsavel por distribuir trabalhos;
-  - sem mutex global: a comunicacao ocorre principalmente por filas,
+  - a comunicacao ocorre principalmente por filas,
     notificacoes, Event Group e semaforo contador.
 
   Os comentarios abaixo destacam os pontos relevantes da arquitetura,
@@ -172,7 +172,7 @@ volatile bool sistemaPronto = false;
   Filas FreeRTOS do sistema.
 
   Cada fila possui uma responsabilidade especifica. Essa separacao reduz
-  a disputa entre tarefas e substitui um mutex global sobre todo o hospital.
+  a disputa entre tarefas.
 */
 QueueHandle_t qLog;                       // Mensagens para a tarefa Logger.
 QueueHandle_t qPrioridade[3];             // Filas vermelho, laranja e azul.
@@ -845,7 +845,6 @@ void setup() {
   acordarDespachante();
 
   registrar("\nHOSPITAL FreeRTOS: 3 consultorios, 3 maqueiros, 4 leitos.\n");
-  registrar("Arquitetura sem mutex global. Monitoramento de pilha removido.\n");
 }
 
 void loop() {
